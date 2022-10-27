@@ -68,7 +68,7 @@ def interactive():
         again()
 
     elif user_choice == 'e' or user_choice == 'E':
-        print('Goodbye ' + username + ', It was nice meeting you')
+        print('Goodbye ' + username.capitalize() + ', It was nice meeting you')
 
 
 def again():
@@ -77,7 +77,7 @@ def again():
     if cont == 'y':
         interactive()
     else:
-        print('Good bye ' + username + ', It was nice meeting you 😊')
+        print('Good bye ' + username.capitalize() + ', It was nice meeting you 😊')
 
 
 choice()
