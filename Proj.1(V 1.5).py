@@ -12,30 +12,33 @@ def choice():
 def interactive():
     user_choice = input('a/b/c/d/e: ')
     if user_choice == 'a' or user_choice == 'A':
-        def math():
+        def calc(x):
             try:
-                num1 = float(input('Insert Number: '))
-                operation = input('Insert desired operation: ')
-                num2 = float(input('Insert another number: '))
-                if operation == '+':
-                    print(float(num1 + num2))
-                elif operation == '-':
-                    print(float(num1 - num2))
-                elif operation == '*':
-                    print(float(num1 * num2))
-                elif operation == '/':
-                    print(float(num1 / num2))
-                else:
-                    print('Invalid operation, please use summation, subtraction, multiplication, or division')
-                    math()
-            except ValueError:
-                print('Please insert a number (whole or decimal)')
-                math()
-
+                if '+' in x:
+                    i = x.split('+')
+                    print(int(i[0]) + int(i[1]))
+               elif '-' in x:
+                    j = x.split('-')
+                    print(int(j[0]) - int(j[1]))
+               elif '*' in x:
+                    k = x.split('*')
+                    print(int(k[0]) * int(k[1]))
+               elif '/' in x:
+                    s = x.split('/')
+                    print(int(s[0]) / int(s[1]))
+               else:
+                    print('invalid operator')
+                    calc(input())
             except ZeroDivisionError:
-                print('You can\'t divide by zero')
-                math()
-        math()
+                print('Don\'t divide by zero...dumbass')
+                calc(input())
+           calc(input())
+calc(input())
+
+            except ValueError:
+                print("Please use a propper operator")
+                calc(input())
+        calc(input())
         again()
     elif user_choice == 'b' or user_choice == 'B':
         color = input('Insert color: ')
